@@ -17,9 +17,16 @@ const allSweets = [
   { name: 'Tilkut', description: 'Special seasonal tilkut made of sesame and jaggery/sugar.', image: 'https://images.unsplash.com/photo-1582560475093-ba66cefeca8e?w=500&h=400&fit=crop' }
 ]
 
+import SEO from '../components/SEO'
+
 const Sweets = () => {
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title="Our Sweets Menu" 
+        description="Explore our wide variety of traditional Indian sweets like Rasgulla, Gulab Jamun, and Kaju Katli made with pure desi ghee." 
+        keywords="Indian sweets menu, buy sweets online, traditional sweets, pure desi ghee sweets"
+      />
       <PageBanner 
         title="Our Sweets" 
         description="Explore our wide variety of traditional Indian sweets made with pure love and desi ghee."

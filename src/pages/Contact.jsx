@@ -2,9 +2,16 @@ import PageBanner from '../components/PageBanner'
 import { motion } from 'framer-motion'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
 
+import SEO from '../components/SEO'
+
 const Contact = () => {
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title="Contact Us" 
+        description="Get in touch with Janta Mishthan Bhandar for bulk orders, party bookings, or inquiries. Located in Sherghati, Gaya." 
+        keywords="contact sweet shop, order sweets online, bulk sweets order, Janta Mishthan Bhandar contact"
+      />
       <PageBanner
         title="Contact Us"
         description="We'd love to hear from you. Visit our shop or reach out to us for orders and inquiries."

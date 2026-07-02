@@ -14,6 +14,8 @@ const galleryImages = [
 
 const categories = ['All', 'Sweet Counter', 'Fresh Sweets', 'Kitchen', 'Namkeen']
 
+import SEO from '../components/SEO'
+
 const Gallery = () => {
   const [filter, setFilter] = useState('All')
   const [selectedImg, setSelectedImg] = useState(null)
@@ -24,6 +26,11 @@ const Gallery = () => {
 
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title="Gallery" 
+        description="Take a look at the fresh sweets, snacks, and hygienic kitchen of Janta Mishthan Bhandar." 
+        keywords="sweet shop gallery, Indian sweets pictures, fresh sweets, Janta Mishthan Bhandar photos"
+      />
       <PageBanner 
         title="Our Gallery" 
         description="A visual treat of our shop, kitchen, and mouth-watering delicacies."
