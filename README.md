@@ -36,5 +36,7 @@ To run this project locally, follow these steps:
 
 3. **Build for Production:**
    ```bash
+
    npm run build
+   
    ```
