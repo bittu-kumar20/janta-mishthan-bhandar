@@ -21,9 +21,16 @@ const allDaySnacks = [
   { name: 'Mix Namkeen', type: 'All Day', image: namkeen },
 ]
 
+import SEO from '../components/SEO'
+
 const Breakfast = () => {
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title="Breakfast & Snacks" 
+        description="Start your day with hot Puri Sabji, Jalebi, or enjoy all-day snacks like Samosa and Kachori at Janta Mishthan Bhandar." 
+        keywords="breakfast near me, samosa near me, jalebi, kachori, snacks near me"
+      />
       <PageBanner
         title="Breakfast & Namkeen"
         description="Start your day right with our fresh and hot morning specials, or grab a quick snack anytime."

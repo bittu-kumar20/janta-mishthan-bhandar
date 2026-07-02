@@ -30,9 +30,16 @@ const featuredSweets = [
   }
 ]
 
+import SEO from '../components/SEO'
+
 const Home = () => {
   return (
     <div>
+      <SEO 
+        title="Best Sweet Shop Near You" 
+        description="Looking for near by sweets? Visit Janta Mishthan Bhandar for the best, most authentic Indian sweets and snacks." 
+        keywords="near by sweets, sweet shop near me, best sweet shop, Indian sweets, Janta Mishthan Bhandar"
+      />
       <Hero />
       <Stats />
 

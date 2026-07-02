@@ -3,9 +3,16 @@ import { motion } from 'framer-motion'
 import { FaAward, FaHeart, FaStar } from 'react-icons/fa'
 import about from "../assets/about.png";
 
+import SEO from '../components/SEO'
+
 const About = () => {
   return (
     <div className="bg-background min-h-screen">
+      <SEO 
+        title="About Us" 
+        description="Learn about the legacy of Janta Mishthan Bhandar. Serving pure and authentic Indian sweets in Sherghati for over 30 years." 
+        keywords="about Janta Mishthan Bhandar, sweet shop history, best sweet shop in Sherghati"
+      />
       <PageBanner
         title="About Janta Mishthan Bhandar"
         description="A legacy of sweetness, purity, and trust since three decades."
