@@ -1,34 +1,34 @@
-import PageBanner from '../components/PageBanner'
-import BreakfastCard from '../components/BreakfastCard'
-import SectionTitle from '../components/SectionTitle'
-import { motion } from 'framer-motion';
-import puri from "../assets/puri.png"
-import jalebi from "../assets/jalebi.png"
-import samosa from "../assets/samosa.png"
-import chola from "../assets/chola.png"
-import kachori from "../assets/kachori.png"
-import namkeen from "../assets/chat.png"
+import PageBanner from "../components/PageBanner";
+import BreakfastCard from "../components/BreakfastCard";
+import SectionTitle from "../components/SectionTitle";
+import { motion } from "framer-motion";
+import puri from "../assets/puri.png";
+import jalebi from "../assets/jalebi.png";
+import samosa from "../assets/samosa.png";
+import chola from "../assets/chola.png";
+import kachori from "../assets/kachori.png";
+import namkeen from "../assets/chat.png";
 
 const morningSpecials = [
-  { name: 'Puri Sabji', type: 'Morning Special', image: puri },
-  { name: 'Jalebi', type: 'Morning Special', image: jalebi },
-]
+  { name: "Puri Sabji", type: "Morning Special", image: puri },
+  { name: "Jalebi", type: "Morning Special", image: jalebi },
+];
 
 const allDaySnacks = [
-  { name: 'Samosa', type: 'After 10 AM', image: samosa },
-  { name: 'Chhola', type: 'After 10 AM', image: chola },
-  { name: 'Kachori', type: 'After 10 AM', image: kachori },
-  { name: 'Mix Namkeen', type: 'All Day', image: namkeen },
-]
+  { name: "Samosa", type: "After 10 AM", image: samosa },
+  { name: "Chhola", type: "After 10 AM", image: chola },
+  { name: "Kachori", type: "After 10 AM", image: kachori },
+  { name: "Mix Namkeen", type: "All Day", image: namkeen },
+];
 
-import SEO from '../components/SEO'
+import SEO from "../components/SEO";
 
 const Breakfast = () => {
   return (
     <div className="bg-background min-h-screen">
-      <SEO 
-        title="Breakfast & Snacks" 
-        description="Start your day with hot Puri Sabji, Jalebi, or enjoy all-day snacks like Samosa and Kachori at Janta Mishthan Bhandar." 
+      <SEO
+        title="Breakfast & Snacks"
+        description="Start your day with hot Puri Sabji, Jalebi, or enjoy all-day snacks like Samosa and Kachori at Janta Mishthan Bhandar."
         keywords="breakfast near me, samosa near me, jalebi, kachori, snacks near me"
       />
       <PageBanner
@@ -37,8 +37,7 @@ const Breakfast = () => {
         image="https://images.unsplash.com/photo-1601050690597-df0568a70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
       />
 
-      <div className="container mx-auto px-4 py-16">
-
+      <div className="container mx-auto px-6 py-20">
         <SectionTitle title="Morning Specials (7 AM - 10 AM)" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {morningSpecials.map((item, index) => (
@@ -68,10 +67,9 @@ const Breakfast = () => {
             </motion.div>
           ))}
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Breakfast
+export default Breakfast;

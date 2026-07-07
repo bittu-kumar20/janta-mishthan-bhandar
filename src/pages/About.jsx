@@ -1,16 +1,16 @@
-import PageBanner from '../components/PageBanner'
-import { motion } from 'framer-motion'
-import { FaAward, FaHeart, FaStar } from 'react-icons/fa'
+import PageBanner from "../components/PageBanner";
+import { motion } from "framer-motion";
+import { FaAward, FaHeart, FaStar } from "react-icons/fa";
 import about from "../assets/about.png";
 
-import SEO from '../components/SEO'
+import SEO from "../components/SEO";
 
 const About = () => {
   return (
     <div className="bg-background min-h-screen">
-      <SEO 
-        title="About Us" 
-        description="Learn about the legacy of Janta Mishthan Bhandar. Serving pure and authentic Indian sweets in Sherghati for over 30 years." 
+      <SEO
+        title="About Us"
+        description="Learn about the legacy of Janta Mishthan Bhandar. Serving pure and authentic Indian sweets in Sherghati for over 30 years."
         keywords="about Janta Mishthan Bhandar, sweet shop history, best sweet shop in Sherghati"
       />
       <PageBanner
@@ -19,7 +19,7 @@ const About = () => {
         image={about}
       />
 
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-28">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -46,16 +46,23 @@ const About = () => {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <h2 className="text-4xl font-bold text-primary mb-6">Hamari Pehchan: Quality, Safai aur Asli Swad</h2>
+            <h2 className="text-4xl font-bold text-primary mb-6">
+              Hamari Pehchan: Quality, Safai aur Asli Swad
+            </h2>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Janta Mishthan Bhandar, Sherghati (Gaya) mein kai varshon se shuddh mithai aur nashta banane ke liye mashhoor hai.
-              Under the visionary leadership of our owner, <strong>Mr. Sujit Yadav</strong>, we have maintained a strict zero-compromise policy on quality.
+              Janta Mishthan Bhandar, Sherghati (Gaya) mein kai varshon se
+              shuddh mithai aur nashta banane ke liye mashhoor hai. Under the
+              visionary leadership of our owner,{" "}
+              <strong>Mr. Sujit Yadav</strong>, we have maintained a strict
+              zero-compromise policy on quality.
             </p>
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Hamare yahan roz taja mithaiyan, khoya se bani special sweets aur swadisht nashta uplabdh rehta hai.
-              Whether it is a daily craving, a festive occasion, or a wedding order, our customers trust us to deliver the best.
+              Hamare yahan roz taja mithaiyan, khoya se bani special sweets aur
+              swadisht nashta uplabdh rehta hai. Whether it is a daily craving,
+              a festive occasion, or a wedding order, our customers trust us to
+              deliver the best.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
@@ -74,18 +81,23 @@ const About = () => {
             </div>
 
             <div className="bg-accent/30 p-6 rounded-2xl border border-accent">
-              <h3 className="text-xl font-bold text-primary mb-2">Message from the Owner</h3>
+              <h3 className="text-xl font-bold text-primary mb-2">
+                Message from the Owner
+              </h3>
               <p className="text-gray-700 italic">
-                "Our mission is simple - to provide our customers with sweets that taste just like they are made at home, using only the purest ingredients. Your trust is our biggest earning."
+                "Our mission is simple - to provide our customers with sweets
+                that taste just like they are made at home, using only the
+                purest ingredients. Your trust is our biggest earning."
               </p>
-              <p className="text-right mt-4 font-bold text-primary">- Sujit Yadav</p>
+              <p className="text-right mt-4 font-bold text-primary">
+                - Sujit Yadav
+              </p>
             </div>
-
           </motion.div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

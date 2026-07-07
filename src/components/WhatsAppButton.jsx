@@ -1,5 +1,5 @@
-import { FaWhatsapp } from 'react-icons/fa'
-import { motion } from 'framer-motion'
+import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
   return (
@@ -10,12 +10,12 @@ const WhatsAppButton = () => {
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       whileHover={{ scale: 1.1 }}
-      className="fixed bottom-36 right-6 p-4 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors z-40"
+      className="fixed bottom-36 right-6 p-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-colors z-40"
       aria-label="WhatsApp Us"
     >
-      <FaWhatsapp size={28} />
+      <FaWhatsapp size={18} />
     </motion.a>
-  )
-}
+  );
+};
 
-export default WhatsAppButton
+export default WhatsAppButton;

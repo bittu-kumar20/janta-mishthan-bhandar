@@ -1,15 +1,65 @@
-import PageBanner from '../components/PageBanner'
-import { motion } from 'framer-motion'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
+import PageBanner from "../components/PageBanner";
+import { motion } from "framer-motion";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from "react-icons/fa";
 
-import SEO from '../components/SEO'
+import SEO from "../components/SEO";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { name, phone, message } = formData;
+
+    if (!name.trim()) {
+      return toast.error("Please enter your name");
+    }
+
+    if (!phone.trim()) {
+      return toast.error("Please enter your phone number");
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+      return toast.error("Please enter a valid 10-digit phone number");
+    }
+
+    if (!message.trim()) {
+      return toast.error("Please enter your message");
+    }
+
+    toast.success("Message sent successfully!");
+
+    setFormData({
+      name: "",
+      phone: "",
+      message: "",
+    });
+  };
+
   return (
     <div className="bg-background min-h-screen">
-      <SEO 
-        title="Contact Us" 
-        description="Get in touch with Janta Mishthan Bhandar for bulk orders, party bookings, or inquiries. Located in Sherghati, Gaya." 
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Janta Mishthan Bhandar for bulk orders, party bookings, or inquiries. Located in Sherghati, Gaya."
         keywords="contact sweet shop, order sweets online, bulk sweets order, Janta Mishthan Bhandar contact"
       />
       <PageBanner
@@ -19,7 +69,6 @@ const Contact = () => {
 
       <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col lg:flex-row gap-12">
-
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -27,9 +76,12 @@ const Contact = () => {
             className="lg:w-1/3 space-y-8"
           >
             <div>
-              <h2 className="text-3xl font-bold text-primary mb-6">Get In Touch</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6">
+                Get In Touch
+              </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                For bulk orders, party bookings, or any general queries, please contact us using the details below.
+                For bulk orders, party bookings, or any general queries, please
+                contact us using the details below.
               </p>
             </div>
 
@@ -39,8 +91,16 @@ const Contact = () => {
                   <FaMapMarkerAlt size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-primary mb-1">Our Address</h4>
-                  <p className="text-gray-600">Janta Mishthan Bhandar<br />Sherghati, Gaya<br />Bihar - 824211</p>
+                  <h4 className="text-lg font-bold text-primary mb-1">
+                    Our Address
+                  </h4>
+                  <p className="text-gray-600">
+                    Janta Mishthan Bhandar
+                    <br />
+                    Sherghati, Gaya
+                    <br />
+                    Bihar - 824211
+                  </p>
                 </div>
               </div>
 
@@ -49,7 +109,9 @@ const Contact = () => {
                   <FaPhoneAlt size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-primary mb-1">Phone Number</h4>
+                  <h4 className="text-lg font-bold text-primary mb-1">
+                    Phone Number
+                  </h4>
                   <p className="text-gray-600">8292079260</p>
                 </div>
               </div>
@@ -59,7 +121,9 @@ const Contact = () => {
                   <FaWhatsapp size={20} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-primary mb-1">WhatsApp</h4>
+                  <h4 className="text-lg font-bold text-primary mb-1">
+                    WhatsApp
+                  </h4>
                   <p className="text-gray-600">8292079260</p>
                 </div>
               </div>
@@ -73,23 +137,39 @@ const Contact = () => {
             className="lg:w-2/3"
           >
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100">
-              <h3 className="text-2xl font-bold text-primary mb-6">Send us a Message</h3>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <h3 className="text-2xl font-bold text-primary mb-6">
+                Send us a Message
+              </h3>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2" htmlFor="name">Your Name</label>
+                    <label
+                      className="block text-gray-700 font-medium mb-2"
+                      htmlFor="name"
+                    >
+                      Your Name
+                    </label>
                     <input
                       type="text"
                       id="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all bg-gray-50 focus:bg-white"
                       placeholder="Enter your name"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-700 font-medium mb-2" htmlFor="phone">Phone Number</label>
+                    <label
+                      className="block text-gray-700 font-medium mb-2"
+                      htmlFor="phone"
+                    >
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
                       id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all bg-gray-50 focus:bg-white"
                       placeholder="Enter your phone number"
                     />
@@ -97,10 +177,17 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 font-medium mb-2" htmlFor="message">Message</label>
+                  <label
+                    className="block text-gray-700 font-medium mb-2"
+                    htmlFor="message"
+                  >
+                    Message
+                  </label>
                   <textarea
                     id="message"
                     rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all bg-gray-50 focus:bg-white resize-none"
                     placeholder="Tell us what you need..."
                   ></textarea>
@@ -115,34 +202,40 @@ const Contact = () => {
               </form>
             </div>
           </motion.div>
-
         </div>
 
         {/* Google Maps Placeholder */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 h-[400px] w-full rounded-3xl overflow-hidden shadow-lg border-4 border-white"
+        <a
+          href="https://maps.app.goo.gl/kgYdRg5AKq7QFfXC8"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {/* Using a placeholder image for map as requested. In production, embed iframe here */}
-          <div className="w-full h-full bg-gray-200 flex flex-col items-center justify-center relative">
-            <img
-              src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=400&fit=crop"
-              alt="Map Placeholder"
-              className="absolute inset-0 w-full h-full object-cover opacity-50"
-            />
-            <div className="relative z-10 text-center bg-white p-6 rounded-2xl shadow-xl">
-              <FaMapMarkerAlt className="text-secondary text-5xl mx-auto mb-2" />
-              <h3 className="text-xl font-bold text-primary">Janta Mishthan Bhandar</h3>
-              <p className="text-gray-600">Sherghati, Gaya, Bihar</p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-20 h-[400px] w-full rounded-3xl overflow-hidden shadow-lg border-4 border-white"
+          >
+            {/* Using a placeholder image for map as requested. In production, embed iframe here */}
+            <div className="w-full h-full bg-gray-200 flex flex-col items-center justify-center relative">
+              <img
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=400&fit=crop"
+                alt="Map Placeholder"
+                className="absolute inset-0 w-full h-full object-cover opacity-50"
+              />
+              <div className="relative z-10 text-center bg-white p-6 rounded-2xl shadow-xl">
+                <FaMapMarkerAlt className="text-secondary text-5xl mx-auto mb-2" />
+                <h3 className="text-xl font-bold text-primary">
+                  Janta Mishthan Bhandar
+                </h3>
+                <p className="text-gray-600">Sherghati, Gaya, Bihar</p>
+              </div>
             </div>
-          </div>
-        </motion.div>
-
+          </motion.div>
+        </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
